@@ -32,8 +32,10 @@ public class AccountLedger {
 		@Column(name="AL_ACCOUNTLEDGERNAME")
 	    private String AccountLedgerName;
 	    
-		@Column(name="AG_ACCOUNTGROUPID")
-	    private long AccountGroupID;
+		@OneToOne
+	    @JoinColumn(name="AG_ACCOUNTGROUPID")
+	    private AccountGroup accountGroup;
+	     
 		
 		@Column(name="AL_OPENINGBALANCE")
 	    private double   OpeningBalance;
@@ -56,24 +58,36 @@ public class AccountLedger {
 		@Column(name="AL_BANKBRANCHCODE")
 	    private String BankBranchCode; 
 		
-		@Column(name="BL_BUILDINGID")
-		private long BuildingID;
+		/*@OneToOne
+	    @JoinColumn(name="BL_BUILDINGID")
+		private Building building;
 		
-		@Column(name="SL_SUBLOCATIONID")
-		private long subLocationId;
+	    @OneToOne
+	    @JoinColumn(name="SL_SUBLOCATIONID")
+		private SubLocation subLocation;
 		
-		@Column(name="CL_LOCATIONID")
-		private long LocationID;
+	    @OneToOne
+	    @JoinColumn(name="CL_LOCATIONID")
+		private CityLocation cityLocation;
 		
-		@Column(name="CI_CITYID")
-		private long CityID;
+	    @OneToOne
+	    @JoinColumn(name="CI_CITYID")
+		private City city;
 		
-		@Column(name="CR_REGIONID")
-		private long RegionID;
+	    @OneToOne
+	    @JoinColumn(name="CR_REGIONID")
+		private CityRegion cityRegion;
 		
-		@Column(name="CO_COUNTRYID")
-		private long countryID;
+	    @OneToOne
+	    @JoinColumn(name="CO_COUNTRYID")
+		private Country country;
 	    
+	    @OneToOne
+	    @JoinColumn(name="NI_IDENTITYID")
+		private NationalIdentity nationalIdentity;
+		*/
+		
+		
 		@Column(name="AL_ADDRESS")
 	    private String Address;
 	    
@@ -142,40 +156,6 @@ public class AccountLedger {
 		@Column(name="SU_SYSUSERIPM")
 	    private String SysUserIPM;
 
-
-
-	    
-	    @OneToOne
-	    @JoinColumn(name="AG_ACCOUNTGROUPID")
-	    private AccountGroup accountGroup;
-	    /* 
-	    @OneToOne
-	    @JoinColumn(name="BL_BUILDINGID")
-		private Building building;
-		
-	    @OneToOne
-	    @JoinColumn(name="SL_SUBLOCATIONID")
-		private SubLocation subLocation;
-		
-	    @OneToOne
-	    @JoinColumn(name="CL_LOCATIONID")
-		private CityLocation cityLocation;
-		
-	    @OneToOne
-	    @JoinColumn(name="CI_CITYID")
-		private City city;
-		
-	    @OneToOne
-	    @JoinColumn(name="CR_REGIONID")
-		private CityRegion cityRegion;
-		
-	    @OneToOne
-	    @JoinColumn(name="CO_COUNTRYID")
-		private Country country;
-	    
-	    @OneToOne
-	    @JoinColumn(name="NI_IDENTITYID")
-		private NationalIdentity nationalIdentity;*/
-	    
+    
 
 }

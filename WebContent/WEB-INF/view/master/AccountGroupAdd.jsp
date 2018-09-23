@@ -66,7 +66,7 @@
 
 <body>
 	
-	<div class="container-fluid  nav-hidden" id="content">
+	<div class="container-fluid nav-hidden" id="content">
 		<div id="main">
 			<div class="container-fluid">
 				<div class="page-header">
